@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body,
+#root{
+  height:100%;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  @apply bg-slate-50 text-slate-900 antialiased transition-colors duration-300;
+}
+
+.dark body{
+  @apply bg-slate-950 text-slate-100;
+}
+
+/* Selection */
+
+::selection{
+  @apply bg-blue-600 text-white;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  @apply bg-slate-100;
+}
+
+.dark ::-webkit-scrollbar-track{
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb{
+  @apply rounded-full bg-slate-400;
+}
+
+.dark ::-webkit-scrollbar-thumb{
+  @apply bg-slate-700;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  @apply bg-slate-500;
+}
+
+/* Global transitions */
+
+*{
+  @apply transition-colors duration-200;
+}
+
+/* Cards */
+
+.card{
+  @apply rounded-3xl border border-slate-200 bg-white shadow-sm;
+}
+
+.card:hover{
+  @apply shadow-xl;
+}
+
+.dark .card{
+  @apply border-slate-800 bg-slate-900;
+}
+
+/* Tables */
+
+.table{
+  @apply overflow-hidden rounded-3xl border border-slate-200 bg-white;
+}
+
+.dark .table{
+  @apply border-slate-800 bg-slate-900;
+}
+
+/* Inputs */
+
+input,
+textarea,
+select{
+  @apply rounded-xl border-slate-300 bg-white text-slate-900;
+}
+
+.dark input,
+.dark textarea,
+.dark select{
+  @apply border-slate-700 bg-slate-800 text-white;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  @apply ring-2 ring-blue-500 outline-none;
+}
+
+/* Buttons */
+
+button{
+  @apply transition-all duration-200;
+}
+
+button:hover{
+  @apply scale-[1.02];
+}
+
+button:active{
+  @apply scale-[0.98];
+}
